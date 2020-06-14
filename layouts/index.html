@@ -3,6 +3,33 @@
         {{ .Content }}
     </div>
 
+<div style="display:flex;padding-bottom:10px">     
+  <!-- feedburner subscribe via email -->
+  <div style="padding-right:20px">
+    <form   action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=CestLaZ', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><input type="text" placeholder="email" style="width:140px" name="email"/><input type="hidden" value="CestLaZ" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /></form>
+    <!--  feedburner subscribe end -->
+      </div>          
+
+	  <div>
+	<form  class="widget-search__form" role="search" method="get" action="https://google.com/search">
+		<label>
+			<input class="widget-search__field" type="search" placeholder="search{{ T "search_placeholder" }}" value="" name="q" aria-label="{{ T "search_placeholder" }}">
+		</label>
+		<input class="widget-search__submit" type="submit" value="Search">
+		<input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}" />
+	</form>
+</div>
+</div>
+<a href="https://twitter.com/intent/tweet?screen_name=zamansky&ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false">Tweet to @zamansky</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	  <a href="https://twitter.com/zamansky?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @zamansky</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+    
+
+    
+
+    
     {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
     {{ range (.Paginate $pages).Pages }}
         {{ partial "postSummary.html" . }}
